@@ -4,6 +4,7 @@
 import tileUrl from "./assets/tile.svg?no-inline";
 import arrowImage from "./assets/arrow.png";
 import archeryBackground from "./assets/archery.svg?no-inline";
+import points_up from "./assets/points_up.mp3";
 
 const app = document.querySelector<HTMLElement>("#app")!;
 
@@ -238,6 +239,8 @@ function buyUpgrade(button: UpgradeButton) {
   button.stage++;
   setCost(button);
   updateButtonText(button);
+  const points_up_sound = new Audio(points_up);
+  points_up_sound.play();
   updateScore();
 }
 function initializeButton(button: UpgradeButton) {
